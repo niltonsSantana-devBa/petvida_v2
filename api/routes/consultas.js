@@ -1,6 +1,7 @@
 const router = require('express').Router();
-const db = require('../db');
+const db = require('../config/database');
 
+// POST /api/consultas — Agendar nova consulta
 router.post('/', async (req, res) => {
   try {
     const { animal_id, veterinario_id, data_hora, valor } = req.body;
@@ -14,6 +15,7 @@ router.post('/', async (req, res) => {
   }
 });
 
+// PUT /api/consultas/:id/concluir — Concluir consulta
 router.put('/:id/concluir', async (req, res) => {
   try {
     const { diagnostico } = req.body;
@@ -27,6 +29,7 @@ router.put('/:id/concluir', async (req, res) => {
   }
 });
 
+// GET /api/agenda/:data — Agenda do dia
 router.get('/agenda/:data', async (req, res) => {
   try {
     const [rows] = await db.execute(

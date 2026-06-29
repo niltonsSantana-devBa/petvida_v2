@@ -2,10 +2,10 @@
   "name": "petvida-api",
   "version": "1.0.0",
   "description": "API REST PetVida",
-  "main": "src/app.js",
+  "main": "api/server.js",
   "scripts": {
-    "start": "node src/app.js",
-    "dev": "nodemon src/app.js"
+    "start": "node api/server.js",
+    "dev": "nodemon api/server.js"
   },
   "dependencies": {
     "cors": "^2.8.5",

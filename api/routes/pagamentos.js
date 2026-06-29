@@ -1,6 +1,7 @@
 const router = require('express').Router();
-const db = require('../db');
+const db = require('../config/database');
 
+// POST /api/pagamentos/:consulta_id — Registrar pagamento
 router.post('/:consulta_id', async (req, res) => {
   try {
     const { forma_pagamento } = req.body;

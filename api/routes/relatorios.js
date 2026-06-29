@@ -1,6 +1,7 @@
 const router = require('express').Router();
-const db = require('../db');
+const db = require('../config/database');
 
+// GET /api/relatorios/dashboard — Dashboard financeiro
 router.get('/dashboard', async (req, res) => {
   try {
     const [rows] = await db.execute(`
@@ -23,6 +24,7 @@ router.get('/dashboard', async (req, res) => {
   }
 });
 
+// GET /api/relatorios/inadimplentes — Lista de inadimplentes
 router.get('/inadimplentes', async (req, res) => {
   try {
     const [rows] = await db.execute('SELECT * FROM vw_inadimplentes');
